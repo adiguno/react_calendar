@@ -11,14 +11,14 @@ export class Year extends React.Component<YearProps, {}> {
 	}
 
 	render() {
-		return <div>{this.renderWeeks()}</div>;
+		return <div>{this.renderWeeks(52)}</div>;
 	}
 
-	renderWeeks() {
+	renderWeeks(num: number) {
 		let weeks = [];
 		let week;
-		for (let i = 1; i < 53; i++) {
-			week = <Week key={i} index={i} />;
+		for (let i = 1; i < num + 1; i++) {
+			week = <Week key={`week${i}`} index={i} />;
 			weeks.push(week);
 		}
 		return weeks;
