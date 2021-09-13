@@ -1,35 +1,35 @@
 import * as React from "react";
+import { Year } from "./Year";
 
 type CalendarState = {
-  startDate: number;
+	startDate: number;
 };
 type CalendarProps = {
-  startDate: number;
+	startDate: number;
 };
 
 export class Calendar extends React.Component<CalendarProps, CalendarState> {
-  constructor(props: CalendarProps) {
-    super(props);
-    console.log(props);
-  }
-  state: CalendarState = {
-    startDate: 0,
-  };
-  render() {
-    let weeks = [];
-    for (let i = 1; i < 53; i++) {
-      weeks.push(i);
-    }
+	constructor(props: CalendarProps) {
+		super(props);
+		console.log(props);
+	}
+	state: CalendarState = {
+		startDate: 0,
+	};
 
-    var fiftyTwoWeeks = weeks.map((item) => <button>{item}</button>);
+	renderYears() {
+		let years = [];
+		let year;
+		for (let i = 1; i < 101; i++) {
+			year = <Year index={i} />;
+			years.push(year);
+		}
+		return years;
+	}
 
-    let years = [];
-    for (let i = 1; i < 101; i++) {
-      years.push(i);
-    }
+	render() {
+		const hundredYears = this.renderYears();
 
-    var hundredYears = years.map((item) => <div>{fiftyTwoWeeks}</div>);
-
-    return <div>{hundredYears}</div>;
-  }
+		return <div>{hundredYears}</div>;
+	}
 }
