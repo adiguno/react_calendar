@@ -5,7 +5,7 @@ function App() {
   return (
     <div className="App">
       <div className="Calendar">
-        <Calendar />
+        <Calendar startDate={0}/>
       </div>
     </div>
   );
