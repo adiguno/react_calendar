@@ -20,10 +20,22 @@ export class Week extends React.Component<WeekProps, {}> {
   }
 
   style: CSS.Properties = {
+    // display: "flex",
+    // justifyContent: "center",
+    // alignItems: "center",
+    // margin: "auto auto",
+    marginTop: "2.5px",
+    marginBottom: "2.5px",
+    marginLeft: "auto",
+    marginRight: "auto",
+    // lineHeight: "20px",
+
     height: "20px",
     width: "20px",
+
+    // paddingBottom: "5px",
     padding: "1px",
-    margin: "2px",
+    // margin: "2px",
     backgroundColor: "rgba(77, 138, 235, 0.85)",
     borderRadius: "5px",
   };
