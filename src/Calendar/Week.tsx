@@ -20,6 +20,7 @@ export class Week extends React.Component<WeekProps, {}> {
   }
 
   style: CSS.Properties = {
+    cursor: "pointer",
     // display: "flex",
     // justifyContent: "center",
     // alignItems: "center",
