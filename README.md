@@ -1,3 +1,9 @@
+# to deploy
+1. `yarn build`
+2. duplicate `app.yaml` into `build/`
+3. `gcloud app deploy`
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
