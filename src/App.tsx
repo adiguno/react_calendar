@@ -2,7 +2,7 @@ import "./App.css";
 import { Calendar } from "./Calendar/Calendar";
 
 function App() {
-  let epochMillis = 828320461;
+  let epochMillis = 828320461000;
   let now = Date.now();
   return (
     <div className="App">
