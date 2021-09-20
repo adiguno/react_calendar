@@ -1,6 +1,6 @@
 import "./App.css";
+import { Search } from "./Calendar/BirthdayPopup";
 // import { BirthdayPopup } from "./Calendar/BirthdayPopup";
-import { Search } from "./Calendar/BirthdayPopup2";
 import { Calendar } from "./Calendar/Calendar";
 
 function App() {
@@ -11,7 +11,7 @@ function App() {
       {/* <div className="BirthdayPopup">
         <BirthdayPopup />
       </div> */}
-      <div className="BirthdayPopup2">
+      <div className="BirthdayPopup">
         <Search />
       </div>
       <div className="Calendar">

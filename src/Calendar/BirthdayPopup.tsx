@@ -1,12 +1,25 @@
-// import React from "react";
-// import CSS from "csstype";
+import React from "react";
 
-// // type WeekProps = {
-// //   index: number;
-// //   past: boolean;
-// // };
+export const Search = () => {
+  const [showResults, setShowResults] = React.useState(false);
+  const onClick = () => setShowResults(true);
+  return (
+    <div>
+      <input type="submit" value="Search" onClick={onClick} />
+      {showResults ? <Results /> : null}
+    </div>
+  );
+};
 
-// export class BirthdayPopup extends React.Component<{}, {}> {
+const Results = () => (
+  <div id="results" className="search-results">
+    Some Results
+  </div>
+);
+
+// ReactDOM.render(<Search />, document.querySelector(".BirthdayPopup"));
+
+// export class BirthdayPopup2 extends React.Component<{}, {}> {
 //   constructor() {
 //     super({});
 //     this.state = {
@@ -44,39 +57,5 @@
 //         <button type="submit">Submit</button>
 //       </div>
 //     );
-
-//     // const { startDate } = this.state;
-//     // return (
-//     //   <DatePicker
-//     //     dateFormat="dd/MM/yyyy"
-//     //     selected={startDate}
-//     //     onChange={this.handleChange}
-//     //   />
-//     // );
 //   }
-
-//   style: CSS.Properties = {
-//     cursor: "pointer",
-//     marginTop: "2.5px",
-//     marginBottom: "2.5px",
-//     marginLeft: "auto",
-//     marginRight: "auto",
-//     height: "20px",
-//     width: "20px",
-//     padding: "1px",
-//     backgroundColor: "rgba(77, 138, 235, 0.85)",
-//     borderRadius: "5px",
-//   };
-//   pastStyle: CSS.Properties = {
-//     cursor: "pointer",
-//     marginTop: "2.5px",
-//     marginBottom: "2.5px",
-//     marginLeft: "auto",
-//     marginRight: "auto",
-//     height: "20px",
-//     width: "20px",
-//     padding: "1px",
-//     backgroundColor: "rgba(90, 3, 252, 0.85)",
-//     borderRadius: "5px",
-//   };
 // }
