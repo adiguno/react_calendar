@@ -1,6 +1,5 @@
 import "./App.css";
 // import { BirthdayPopup } from "./Calendar/BirthdayPopup";
-import { Search } from "./Calendar/BirthdayPopup2";
 import { Calendar } from "./Calendar/Calendar";
 
 function App() {
@@ -11,9 +10,9 @@ function App() {
       {/* <div className="BirthdayPopup">
         <BirthdayPopup />
       </div> */}
-      <div className="BirthdayPopup2">
+      {/* <div className="BirthdayPopup2">
         <Search />
-      </div>
+      </div> */}
       <div className="Calendar">
         <Calendar startDate={epochMillis} nowDate={now} />
       </div>
