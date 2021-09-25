@@ -15,6 +15,9 @@ function App() {
       <div className="BirthdayPopup2">{/* <Search /> */}</div>
 
       <div className="BirthdayInputFormDialog">{FormDialog()}</div>
+      {/* <div className="BirthdayPopup2">
+        <Search />
+      </div> */}
       <div className="Calendar">
         <Calendar startDate={epochMillis} nowDate={now} />
       </div>
