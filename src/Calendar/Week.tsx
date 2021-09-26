@@ -23,8 +23,8 @@ export class Week extends React.Component<WeekProps, WeekStates> {
 
     return (
       <div className={componentClass}>
-        <label>{this.props.index}</label>
-        {/* <label></label> */}
+        {/* <label>{this.props.index}</label> */}
+        <label></label>
       </div>
     );
   }
