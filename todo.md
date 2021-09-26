@@ -1,6 +1,10 @@
+# 9-26
+
+- [ ] display/store total weeks lived
+
 # 9-25
 
-- [ ] birthday input popup
+- [x] birthday input popup
   - use Material Ui - form dialog
-- [ ] styling
+- [x] styling
 - [ ] display/store total weeks lived
