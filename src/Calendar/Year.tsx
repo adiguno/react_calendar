@@ -11,11 +11,6 @@ export class Year extends React.Component<YearProps, {}> {
   weeksPast: number;
   constructor(props: YearProps) {
     super(props);
-    // if (this.props.past) {
-    //   this.weeksPast = 51;
-    // } else {
-    //   this.weeksPast = this.props.weeksPast;
-    // }
     this.weeksPast = this.props.weeksPast;
   }
 

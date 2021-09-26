@@ -6,7 +6,11 @@ import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 import DialogTitle from "@mui/material/DialogTitle";
 
-export default function FormDialog() {
+type birthDayProps = {
+  setBirthDay: (date: number) => void;
+};
+
+export default function BirthDayInputDialog({ setBirthDay }: birthDayProps) {
   const [open, setOpen] = React.useState(false);
   const [month, setMonth] = React.useState(0);
   const [day, setDay] = React.useState(0);
@@ -21,24 +25,33 @@ export default function FormDialog() {
   };
 
   const handleSubmit = () => {
-    console.log(`form submitted: ${month} - ${day} - ${year}`);
+    // console.log(`form submitted: ${month} - ${day} - ${year}`);
+    let birthDay = new Date();
+    birthDay.setFullYear(year);
+    birthDay.setMonth(month - 1);
+    birthDay.setDate(day);
+
+    // console.log(`converted birthday: ${birthDay}`);
+
+    setBirthDay(birthDay.getTime());
+
     setOpen(false);
   };
 
   function handleMonthChange(e: React.ChangeEvent<HTMLInputElement>) {
-    console.log(`new month: ${e.target.value}`);
+    // console.log(`new month: ${e.target.value}`);
     if (Number(e.target.value)) {
       setMonth(Number(e.target.value));
     }
   }
   function handleDayChange(e: React.ChangeEvent<HTMLInputElement>) {
-    console.log(`new day: ${e.target.value}`);
+    // console.log(`new day: ${e.target.value}`);
     if (Number(e.target.value)) {
       setDay(Number(e.target.value));
     }
   }
   function handleYearChange(e: React.ChangeEvent<HTMLInputElement>) {
-    console.log(`new year: ${e.target.value}`);
+    // console.log(`new year: ${e.target.value}`);
     if (Number(e.target.value)) {
       setYear(Number(e.target.value));
     }

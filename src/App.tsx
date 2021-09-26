@@ -1,9 +1,7 @@
+import { Container } from "@mui/material";
 import { useState } from "react";
 import "./App.css";
-import FormDialog from "./Calendar/BirhdayInputFormDialog";
-import BirthDay from "./Calendar/BirhdayInputFormDialogClass";
-// import { BirthdayPopup } from "./Calendar/BirthdayPopup";
-// import { Search } from "./Calendar/BirthdayPopup2";
+import BirthDayInputDialog from "./Calendar/BirhdayInputFormDialog";
 import { Calendar } from "./Calendar/Calendar";
 
 function App() {
@@ -11,15 +9,20 @@ function App() {
   let now = Date.now();
   return (
     <div className="App">
-      <div className="birthday">
-        <BirthDay setBirthDay={setBirthday} />
-        {"Your birthday is : " + birthday}
-      </div>
-      {birthday !== 0 ? (
-        <div className="Calendar">
-          <Calendar startDate={birthday} nowDate={now} />
-        </div>
-      ) : null}
+      <Container>
+        {birthday === 0 ? (
+          <div>
+            <h1>Feeling Existential?</h1>
+            <div className="birthday">
+              <BirthDayInputDialog setBirthDay={setBirthday} />
+            </div>
+          </div>
+        ) : (
+          <div className="Calendar">
+            <Calendar startDate={birthday} nowDate={now} />
+          </div>
+        )}
+      </Container>
     </div>
   );
 }
