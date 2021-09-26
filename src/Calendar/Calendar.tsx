@@ -77,7 +77,6 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
 
     // future years
     for (let i = this.yearsPast + 2; i < num + 1; i++) {
-      s;
       year = <Year key={`year${i}`} index={i} weeksPast={0} />;
       years.push(year);
     }
