@@ -4,7 +4,6 @@ import CSS from "csstype";
 
 type YearProps = {
   index: number;
-  // past: boolean;
   weeksPast: number;
 };
 

@@ -1,5 +1,4 @@
 import React from "react";
-import CSS from "csstype";
 import "./Week.css";
 
 type WeekStates = {
