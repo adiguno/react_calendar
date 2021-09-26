@@ -4,7 +4,7 @@ import CSS from "csstype";
 
 type YearProps = {
   index: number;
-  past: boolean;
+  // past: boolean;
   weeksPast: number;
 };
 
@@ -12,11 +12,12 @@ export class Year extends React.Component<YearProps, {}> {
   weeksPast: number;
   constructor(props: YearProps) {
     super(props);
-    if (this.props.past) {
-      this.weeksPast = 52;
-    } else {
-      this.weeksPast = this.props.weeksPast;
-    }
+    // if (this.props.past) {
+    //   this.weeksPast = 51;
+    // } else {
+    //   this.weeksPast = this.props.weeksPast;
+    // }
+    this.weeksPast = this.props.weeksPast;
   }
 
   render() {
@@ -26,16 +27,38 @@ export class Year extends React.Component<YearProps, {}> {
   renderWeeks(num: number) {
     let weeks = [];
     let week;
-    // for (let i = 1; i < num + 1; i++) {
+
+    // past weeks
     for (let i = 1; i < this.weeksPast + 1; i++) {
-      week = <Week key={`week${i}`} index={i} past={true} />;
+      week = (
+        <Week key={`year${this.props.index}week${i}`} index={i} past={true} />
+      );
+      weeks.push(week);
+      // console.log(`past: ${i}`);
+    }
+
+    // current week
+    if (this.weeksPast !== 52) {
+      let currentWeek = this.weeksPast + 1;
+      // console.log(`current: ${currentWeek}`);
+
+      week = (
+        <Week
+          key={`year${this.props.index}week${currentWeek}`}
+          index={currentWeek}
+          past={false}
+        />
+      );
       weeks.push(week);
     }
-    //missing current week
 
-    for (let i = this.weeksPast + 1; i < num + 1; i++) {
-      week = <Week key={`week${i}`} index={i} past={false} />;
+    // future weeks
+    for (let i = this.weeksPast + 2; i < num + 1; i++) {
+      week = (
+        <Week key={`year${this.props.index}week${i}`} index={i} past={false} />
+      );
       weeks.push(week);
+      // console.log(`future: ${i}`);
     }
 
     return weeks;

@@ -1,26 +1,25 @@
+import { useState } from "react";
 import "./App.css";
 import FormDialog from "./Calendar/BirhdayInputFormDialog";
+import BirthDay from "./Calendar/BirhdayInputFormDialogClass";
 // import { BirthdayPopup } from "./Calendar/BirthdayPopup";
 // import { Search } from "./Calendar/BirthdayPopup2";
 import { Calendar } from "./Calendar/Calendar";
 
 function App() {
-  let epochMillis = 828320461000;
+  const [birthday, setBirthday] = useState(0);
   let now = Date.now();
   return (
     <div className="App">
-      {/* <div className="BirthdayPopup">
-        <BirthdayPopup />
-      </div> */}
-      <div className="BirthdayPopup2">{/* <Search /> */}</div>
-
-      <div className="BirthdayInputFormDialog">{FormDialog()}</div>
-      {/* <div className="BirthdayPopup2">
-        <Search />
-      </div> */}
-      <div className="Calendar">
-        <Calendar startDate={epochMillis} nowDate={now} />
+      <div className="birthday">
+        <BirthDay setBirthDay={setBirthday} />
+        {"Your birthday is : " + birthday}
       </div>
+      {birthday !== 0 ? (
+        <div className="Calendar">
+          <Calendar startDate={birthday} nowDate={now} />
+        </div>
+      ) : null}
     </div>
   );
 }
