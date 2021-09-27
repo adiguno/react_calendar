@@ -1,11 +1,15 @@
+# [adiguno.net](adiguno.net)
+
 # to deploy
+
 1. `yarn build`
 2. duplicate `app.yaml` into `build/`
 3. `gcloud app deploy`
 
 # notes
+
 - react hook cannot be called in a class component
-    - must be called in a React function component or custom React Hook function
+  - must be called in a React function component or custom React Hook function
 
 # Getting Started with Create React App
 
