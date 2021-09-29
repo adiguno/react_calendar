@@ -1,6 +1,6 @@
 # 9-29
 
-- [ ] change current week color
+- [x] change current week color
 - [ ] display/store total weeks lived
 - [ ] 'email for new feature' feture
   - [ ] click week = new popup
