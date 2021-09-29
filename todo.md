@@ -1,3 +1,12 @@
+# 9-29
+
+- [ ] change current week color
+- [ ] display/store total weeks lived
+- [ ] 'email for new feature' feture
+  - [ ] click week = new popup
+  - [ ] email input box in new popup
+  - [ ] backend service to collect?
+
 # 9-26
 
 - [ ] display/store total weeks lived
