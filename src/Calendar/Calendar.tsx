@@ -19,14 +19,15 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
     let ageYears = age / 31536000000;
     let ageYearsRemainder = ageYears % 1;
     let ageYearsWhole = ageYears - ageYearsRemainder;
-    let currentYear = ageYearsWhole + 1;
 
     let extraWeeks = 52 * ageYearsRemainder;
     let extraWeeksRemainder = extraWeeks % 1;
     let extraWeeksWhole = extraWeeks - extraWeeksRemainder;
-    let currentWeek = extraWeeksWhole + 1;
     this.yearsPast = ageYearsWhole;
     this.weeksPast = extraWeeksWhole;
+
+    let currentYear = ageYearsWhole + 1;
+    let currentWeek = extraWeeksWhole + 1;
     // console.log(`age: ${age}`);
     // console.log(`current year: ${currentYear}`);
     // console.log(`current week: ${currentWeek}`);
@@ -59,25 +60,41 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
     let year;
     // past years
     for (let i = 1; i < this.yearsPast + 1; i++) {
-      year = <Year key={`year${i}`} index={i} weeksPast={52} />;
+      year = (
+        <Year
+          key={`year${i}`}
+          index={i}
+          weeksPast={52}
+          pastPresentFuture={"past"}
+        />
+      );
       years.push(year);
     }
 
-    // current yar
+    // current year
     let currentYear = this.yearsPast + 1;
+    // console.log(`currentYear: ${currentYear}`);
     year = (
       <Year
         key={`year${currentYear}`}
         index={currentYear}
         // past={false} // todo change or add new attr
         weeksPast={this.weeksPast}
+        pastPresentFuture={"present"}
       />
     );
     years.push(year);
 
     // future years
     for (let i = this.yearsPast + 2; i < num + 1; i++) {
-      year = <Year key={`year${i}`} index={i} weeksPast={0} />;
+      year = (
+        <Year
+          key={`year${i}`}
+          index={i}
+          weeksPast={0}
+          pastPresentFuture={"future"}
+        />
+      );
       years.push(year);
     }
     return years;
