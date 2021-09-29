@@ -65,7 +65,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
           key={`year${i}`}
           index={i}
           weeksPast={52}
-          pastPresentFuture={"past"}
+          pastCurrentFuture={"past-year"}
         />
       );
       years.push(year);
@@ -80,7 +80,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
         index={currentYear}
         // past={false} // todo change or add new attr
         weeksPast={this.weeksPast}
-        pastPresentFuture={"present"}
+        pastCurrentFuture={"present-year"}
       />
     );
     years.push(year);
@@ -92,7 +92,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
           key={`year${i}`}
           index={i}
           weeksPast={0}
-          pastPresentFuture={"future"}
+          pastCurrentFuture={"future-year"}
         />
       );
       years.push(year);

@@ -7,7 +7,7 @@ type WeekStates = {
 
 type WeekProps = {
   index: number;
-  pastPresentFuture: string;
+  pastCurrentFuture: string;
 };
 
 export class Week extends React.Component<WeekProps, WeekStates> {
@@ -30,10 +30,10 @@ export class Week extends React.Component<WeekProps, WeekStates> {
   }
 
   getClass(): string {
-    if (this.props.pastPresentFuture === "past-week") {
+    if (this.props.pastCurrentFuture === "past-week") {
       return "past-week";
     }
-    if (this.props.pastPresentFuture === "future-week") {
+    if (this.props.pastCurrentFuture === "future-week") {
       return "future-week";
     }
     return "current-week";
