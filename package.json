@@ -25,6 +25,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "buildeploy": "buildeploy.sh",
+    "macbuildeploy": "sh buildeploy.sh",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
