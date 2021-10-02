@@ -1,8 +1,19 @@
+# 10-2
+
+- [ ] 'email for new feature' feature
+  - [ ] click week = new popup
+  - [ ] email input box in new popup
+  - [ ] backend service to collect?
+- [ ] display/store total weeks lived
+- [ ] birthday validation
+- [ ] birthday autocomplete
+- [ ] birthday autofocus
+
 # 9-29
 
-- [ ] change current week color
+- [x] change current week color
 - [ ] display/store total weeks lived
-- [ ] 'email for new feature' feture
+- [ ] 'email for new feature' feature
   - [ ] click week = new popup
   - [ ] email input box in new popup
   - [ ] backend service to collect?
