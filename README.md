@@ -1,15 +1,26 @@
 # [adiguno.net](http://adiguno.net)
 
-# to deploy
-
-1. `yarn build`
-2. duplicate `app.yaml` into `build/`
-3. `gcloud app deploy`
-
 # notes
 
 - react hook cannot be called in a class component
   - must be called in a React function component or custom React Hook function
+
+# gcloud notes
+
+- service accounts, used for API comms
+
+  - service account key needed to authenticate with google cloud buckets
+
+  ## We follow the following steps in order to create a service account.
+
+1.       Open the Identity Access Management ( IAM ) section of the Google Cloud Console
+2.  From the left side navigation bar, click on Service Accounts and when there click on the Create Service Account button.
+3.  Enter a preferred name and a description and click the Create button. We would see a service account ID being auto generated using characters from our typed in name.
+4.  Next, click the Select Role dropdown menu to select a role for this service account.
+5.  Type “Storage Admin” and click the Storage Admin role. This role gives our Node server a full control over stored resources in our storage buckets.
+6.  Leave the remaining fields blank and click on the Done button.
+
+After being created, we would be redirected to a list of all Service Accounts within our project, including the default created ones and the newly created service account.
 
 # Getting Started with Create React App
 
