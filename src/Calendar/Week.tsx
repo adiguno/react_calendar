@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
+import { addFeedback } from "./EmailList";
+import FeedbackDialog from "./FeedbackDialog";
 import "./Week.css";
 
 type WeekStates = {
-  past: boolean;
+  // openDialog: boolean;
 };
 
 type WeekProps = {
@@ -11,10 +13,28 @@ type WeekProps = {
 };
 
 export class Week extends React.Component<WeekProps, WeekStates> {
+  // openDialog: boolean;
+  // setOpenDialog: Function;
   constructor(props: WeekProps) {
     super(props);
+
+    // [this.openDialog, this.setOpenDialog] = useState<boolean>(false);
+
     // this.state = {
-    //   past: this.props.pastPresentFuture,
+    //   openDialog: false,
+    // };
+    this.handleClickOpen = this.handleClickOpen.bind(this);
+  }
+  handleClickOpen() {
+    console.log("clicking open");
+    // this.setOpenDialog(true);
+    // this.state = {
+    //   openDialog: true,
+    // };
+  }
+  handleClickClose() {
+    // this.state = {
+    //   openDialog: false,
     // };
   }
 
@@ -22,9 +42,16 @@ export class Week extends React.Component<WeekProps, WeekStates> {
     const componentClass = this.getClass();
 
     return (
+      // onClick={addFeedback}
       <div className={componentClass}>
         {/* <label>{this.props.index}</label> */}
-        <label></label>
+        <label onClick={this.handleClickOpen}>
+          {/* <FeedbackDialog open={true} onClose={this.handleClickClose} /> */}
+        </label>
+        {/* <FeedbackDialog
+          open={this.state.openDialog}
+          onClose={this.handleClickClose}
+        /> */}
       </div>
     );
   }

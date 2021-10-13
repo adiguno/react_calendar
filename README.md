@@ -13,7 +13,7 @@
 
   ## We follow the following steps in order to create a service account.
 
-1.       Open the Identity Access Management ( IAM ) section of the Google Cloud Console
+1.         Open the Identity Access Management ( IAM ) section of the Google Cloud Console
 2.  From the left side navigation bar, click on Service Accounts and when there click on the Create Service Account button.
 3.  Enter a preferred name and a description and click the Create button. We would see a service account ID being auto generated using characters from our typed in name.
 4.  Next, click the Select Role dropdown menu to select a role for this service account.
@@ -21,6 +21,11 @@
 6.  Leave the remaining fields blank and click on the Done button.
 
 After being created, we would be redirected to a list of all Service Accounts within our project, including the default created ones and the newly created service account.
+
+# gcp buckets vs firestore
+
+- gcp buckets requires backend
+- firestore doesn't ?
 
 # Getting Started with Create React App
 
