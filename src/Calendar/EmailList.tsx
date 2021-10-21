@@ -6,17 +6,16 @@ const firebaseConfig = config;
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-type feedback = {
+type Feedback = {
   email: string;
   feedback: string;
 };
 
-export async function addFeedback() {
+export async function addFeedback(feedback: Feedback) {
   try {
     const docRef = await addDoc(collection(db, "feedback"), {
-      first: "Ada",
-      last: "Lovelace",
-      born: 1815,
+      email: feedback.email,
+      feedback: feedback.feedback,
     });
     console.log("Document written with ID: ", docRef.id);
   } catch (e) {

@@ -1,3 +1,18 @@
+# 10-20
+
+- [ ] 'email for new feature' feature
+  - [ ] click week = new popup
+  - [ ] email input box in new popup
+    - [x] send data to firebase
+    - [ ] validate email
+  - [x] <del>backend service to collect?</del> not needed
+- [ ] display/store total weeks lived
+- [ ] birthday validation
+- [ ] birthday autocomplete
+- [ ] birthday autofocus
+- [ ] look good on mobile
+- [ ] connection not secure
+
 # 10-3
 
 - [ ] 'email for new feature' feature

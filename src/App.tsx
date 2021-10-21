@@ -26,10 +26,10 @@ function App() {
             </div>
             <div className="Post">
               <FeedbackDialog
-                open={true}
-                onClose={function (): void {
-                  throw new Error("Function not implemented.");
-                }}
+              // open={true}
+              // onClose={function (): void {
+              //   throw new Error("Function not implemented.");
+              // }}
               />
             </div>
           </div>

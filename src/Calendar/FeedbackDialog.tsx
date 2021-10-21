@@ -5,6 +5,7 @@ import Dialog from "@mui/material/Dialog";
 import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 import DialogTitle from "@mui/material/DialogTitle";
+import { addFeedback } from "./EmailList";
 
 // type birthDayProps = {
 //   setBirthDay: (date: number) => void;
@@ -15,8 +16,8 @@ type FeedbackDialogState = {
   open: boolean;
   onClose: () => void;
 };
-export default function FeedbackDialog({ open, onClose }: FeedbackDialogState) {
-  // const [open, setOpen] = React.useState(false);
+export default function FeedbackDialog() {
+  const [open, setOpen] = React.useState(true);
 
   const [email, setEmail] = React.useState("");
   const [feedback, setFeedback] = React.useState("");
@@ -26,14 +27,15 @@ export default function FeedbackDialog({ open, onClose }: FeedbackDialogState) {
   // };
 
   const handleClose = () => {
-    // setOpen(false);
-    onClose();
+    setOpen(false);
+    // onClose();
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     // todo: send feedback to firestore
-    // setOpen(false);
-    onClose();
+    await addFeedback({ email: email, feedback: feedback });
+    setOpen(false);
+    // onClose();
   };
 
   function handleEmailChange(e: React.ChangeEvent<HTMLInputElement>) {
